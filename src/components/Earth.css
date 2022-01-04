@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.planet{
+    display: flex;
+    flex-direction: column;
+    min-width: 50%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -620px;
+    z-index: 1001;
+}
+.planet .earth{
+    width: 295px;
+    height: 295px;
+    background: url('../icons/earth.jpg');
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: inset 0 0 20px #03a9f4,
+                      0 0 120px #03a9f4;
+                      animation: animateEarth 20s linear infinite;
+                      animation: rotation 6000ms linear infinite;
+                    
+}
+@keyframes animateEarth {
+    0%{background-position : 0;}
+    100%{background-position: 162.5%;}
+}
+@keyframes rotation {
+    0%{background-position: 0;}
+    7.5555%{background-position: 0;}
+    26.3055%{background-position: 45%;}
+    52.7777%{background-position: 45%;}
+    69.4444%{background-position: 90%;}
+    75.0000%{background-position: 90%;}
+    85.4166%{background-position: 130%;}
+    86.1111%{background-position: 130%;}
+    100%{background-position: 0;}
+}

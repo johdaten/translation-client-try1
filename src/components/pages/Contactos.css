@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+.contactos-container {
+    background-color: #f5f5f5;
+    margin-top: 70px;
+    text-align: center;
+
+}
+.contactos-container .email{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5rem;
+    padding-top: 20px;
+}
+.contactos-container .pedidos{
+    margin-top: -70px;
+}
+
+.contactos-container .email .email-text .email-icon{
+    color: #eeb807;
+}
+.contactos-container .email .email-text .whatsapp-icon{
+    color: #52ce5f;
+}
+.contactos-container .email .email-text .link{
+    /* color: #1fa2dc; */
+    color: black;
+}

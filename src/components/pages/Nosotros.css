@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+.nosotros-container{
+    height: 100vh;
+    width: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30% 40% 30%;
+}
+
+.nosotros-container .text{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.nosotros-container .text .text-block{
+    text-align: center;
+    padding-right: 5%;
+}
+.nosotros-container .text .text-block .title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #1976d2;
+    margin-bottom: 15px;
+}
+.nosotros-container .text .text-block .description{
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+}
+
+.nosotros-container .animation{
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    position: relative;
+}
+.nosotros-container .animation .svg{
+    position: absolute;
+    top: 5%;
+    left: 0;
+}
+.nosotros-container .animation .hello{
+    z-index: 5;
+    animation: hello 3s ease-in-out infinite alternate;
+}
+@keyframes spin {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+.nosotros-container .animation .rightWheel{
+    z-index: 5;
+}
+.nosotros-container .animation .leftWheel{
+    z-index: 5; 
+}
+.nosotros-container .animation .manMegaphone{
+    z-index: 5;
+}
+.nosotros-container .animation .manMegaphone{
+    z-index: 5;
+}
+.nosotros-container .animation .phone{
+    z-index: 4;
+}
+.nosotros-container .animation .rightLeaf{
+    z-index: 3;
+    animation: leaf 3s infinite ease-in-out alternate;
+    transform-origin: bottom;
+}
+.nosotros-container .animation .leftLeaf{
+    z-index: 2;
+    animation: leaf 2s infinite ease-in-out alternate;
+    transform-origin: bottom;
+}
+.nosotros-container .animation .background{
+    z-index: 1;
+}
+
+@keyframes hello{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(30deg);
+    }
+}
+@keyframes leaf{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(5deg);
+    }
+}

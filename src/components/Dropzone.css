@@ -1,0 +1,34 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.dropzone {
+    margin-top: 5px;
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 10px;
+    border: 4px dashed #9e9e9e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .title-container{
+
+    display: flex;
+    align-items: space;
+    justify-content: center;
+  
+  }
+  .icon-title{
+    text-align: center;
+    padding-top: 7px;
+    padding-left: 20px;
+  }
+  .active {
+    border: 4px dashed #1976d2;
+  }
