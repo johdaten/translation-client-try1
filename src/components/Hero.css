@@ -7,12 +7,9 @@
   margin: 0;
   padding: 0;
 }
-.hero .slides-container .images {
-  width: 100%;
-}
 .hero {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: auto;
   overflow: hidden;
   position: absolute;
@@ -23,9 +20,11 @@
   display: flex;
   text-align: center;
   width: 100%;
-  height: 100%;
   position: relative;
   z-index: 999;
+}
+.hero .slides-container .images {
+  width: 100%;
 }
 
 /* AQUÍ EMPIEZA EL CENTRO */
@@ -35,67 +34,6 @@
   font-weight: 400;
   color: #fff;
 }
-.word-counter-es{
-  left: 171px;
-  top: 80px;
-  position: absolute;
-  animation-name: animate-counter-es;
-  animation-duration: 6000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.word-counter-en{
-  left: 171px;
-  top: 80px;
-  position: absolute;
-  z-index: 1001;
-  animation-name: animate-counter-en;
-  animation-duration: 6000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.word-counter-de{
-  left: 115px;
-  top: 80px;
-  position: absolute;
-  animation-name: animate-counter-de;
-  animation-duration: 6000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  
-}
-@keyframes animate-counter-es{
-  0%{z-index: 1001;}
-  7.5555%{z-index: 1001;}
-  20%{z-index: 1001;}
-  21%{z-index: -1;}
-  69.4444%{z-index: -1;}
-  75.0000%{z-index: -1;}
-  100%{z-index: -1}
-}
-@keyframes animate-counter-en{
-  0%{z-index: -1;}
-  7.5555%{z-index: -1;}
-  20%{z-index: -1}
-  21%{z-index: 1001;}
-  69.4444%{z-index: 1001;}
-  70%{z-index: 1001}
-  71%{z-index: -1;}
-  77%{z-index: -1;}
-  78%{z-index: 1001;}
-  88%{z-index: 1001;}
-  89%{z-index: -1}
-  100%{z-index: -1;}
-}
-@keyframes animate-counter-de{
-  0%{z-index: -1;}
-  69.4444%{z-index: -1;}
-  70%{z-index: -1;}
-  71%{z-index: 1001}
-  77%{z-index: 1001}
-  78%{z-index: -1} 
-  100%{z-index: -1}
-}
 .hero .slides-container .lang{
   position: absolute;
   font-stretch: condensed;
@@ -104,15 +42,7 @@
   font-family: 'Dela Gothic One', cursive;
   margin-top:7px;
 }
-.slide1{
-  position: relative;
-  z-index: 100;
-  animation-name: animate-slide1;
-  animation-duration: 6000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-@keyframes animate-slide1{
+@keyframes animate-slide{
 
   0%{transform: translateX(0);}
   7.5555%{transform: translateX(0);}
@@ -123,53 +53,37 @@
   85.4166%{transform: translateX(-100vw);}
   86.1111%{transform: translateX(-100vw);}
   100%{transform: translateX(0);}
+}
+.slide1{
+  position: relative;
+  z-index: 100;
+  animation-name: animate-slide;
+  animation-duration: 6000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 .slide2{
   position: relative;
   z-index: 200;
-  animation-name: animate-slide2;
+  animation-name: animate-slide;
   animation-duration: 6000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-}
-@keyframes animate-slide2{
-
-  0%{transform: translateX(0);}
-  7.5555%{transform: translateX(0);}
-  26.3055%{transform: translateX(-100vw);}
-  52.7777%{transform: translateX(-100vw);}
-  69.4444%{transform: translateX(-200vw);}
-  75.0000%{transform: translateX(-200vw);}
-  85.4166%{transform: translateX(-100vw);}
-  86.1111%{transform: translateX(-100vw);}
-  100%{transform: translateX(0);}
 }
 .slide3{
   position: relative;
   z-index:300;
 
-    animation-name: animate-slide3;
+    animation-name: animate-slide;
     animation-duration: 6000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
-@keyframes animate-slide3{
-  0%{transform: translateX(0);}
-  7.5555%{transform: translateX(0);}
-  26.3055%{transform: translateX(-100vw);}
-  52.7777%{transform: translateX(-100vw);}
-  69.4444%{transform: translateX(-200vw);}
-  75.0000%{transform: translateX(-200vw);}
-  85.4166%{transform: translateX(-100vw);}
-  86.1111%{transform: translateX(-100vw);}
-  100%{transform: translateX(0);}
-}
-
 .es{
   color: #81cada;
   margin-left: auto;
   margin-right: auto;
-  left: 0;
+  left: -6%;
   right: 0;
   text-align: center;
   z-index: 110;
