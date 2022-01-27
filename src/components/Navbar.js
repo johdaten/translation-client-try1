@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from "react-router-dom"
-import { GiHamburgerMenu } from 'react-icons/gi';
+import { GiHamburgerMenu } from 'react-icons/gi'
 import { BsXSquareFill } from 'react-icons/bs'
+import { BsX } from 'react-icons/bs'
 import './Navbar.css'
 import { useLocation } from "react-router-dom"
 
@@ -19,13 +20,11 @@ function Navbar() {
           setButton(true);
         }
       };
-    
    
       useEffect(() => {
         showButton();
       }, []);
       window.addEventListener('resize', showButton);
-
 
       // Detecta el cambio de página
     useLocation();
@@ -34,14 +33,18 @@ function Navbar() {
         <>
             <nav 
                 className={`navbar ${(document.URL.charAt(document.URL.length - 1) === '/') ? 'transparent' : null}`}
-                >
+            >
                 <div className='navbar-container'>
                     <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+                            <span className="nav-favicon">
+                                <img src="favicon-nav.png" alt="favicon" className="img-favicon"></img>
+                            </span>
                             <span className='logo-title'>DUALECTO</span>
                     </Link>
-                    <div className='menu-icon' onClick={handleClick}>
-                        <i className='react-icons'>{click ? <BsXSquareFill/> : <GiHamburgerMenu/>}</i>
+                    <div className={`menu-icon ${click ? 'menu-x' : null}`} onClick={handleClick}>
+                        <i className='react-icons'>{click ? <BsX/> : <GiHamburgerMenu/>}</i>
                     </div>
+            
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
@@ -68,6 +71,8 @@ function Navbar() {
                         </Link>
                         </li> */}
                     </ul>
+
+                    
                     {/* {button && <Button linkTo='/sign-up' buttonStyle='btn--outline'>Registrarse</Button>} */}
                 </div>
             </nav>

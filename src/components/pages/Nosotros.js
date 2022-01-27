@@ -13,19 +13,9 @@ const Nosotros = () => {
     return (
         <>
             <div className='nosotros-container'>
-                <div className='animation'>
-                    <img src={hello} alt='hello' className='hello svg'></img>
-                    <img src={leftWheel} alt='leftWheel' className='leftWheel svg'></img>
-                    <img src={rightWheel} alt='rightWheel' className='rightWheel svg'></img>
-                    <img src={manMegaphone} alt='manMegaphone' className='manMegaphone svg'></img>
-                    <img src={phone} alt='phone' className='phone svg'></img>
-                    <img src={rightLeaf} alt='rightLeaf' className='rightLeaf svg'></img>
-                    <img src={leftLeaf} alt='leftLeaf' className='leftLeaf svg'></img>
-                    <img src={background} alt='background' className='background svg'></img>
-                </div>
-                <div className='text'>
+            <   div className='text'>
                     <div className='text-block'>
-                        <h2 className='title'>¿Quiénes somos?</h2>
+                        <h2 className='title'>Conócenos</h2>
                         <p className='description'>
                             Somos una asociación que concentra excelentes profesionales 
                             en el área de traducción, interpretación y localización.
@@ -36,6 +26,17 @@ const Nosotros = () => {
                         </p>
                     </div>
                 </div>
+                <div className='animation'>
+                    <img src={hello} alt='hello' className='hello svg'></img>
+                    <img src={leftWheel} alt='leftWheel' className='leftWheel svg'></img>
+                    <img src={rightWheel} alt='rightWheel' className='rightWheel svg'></img>
+                    <img src={manMegaphone} alt='manMegaphone' className='manMegaphone svg'></img>
+                    <img src={phone} alt='phone' className='phone svg'></img>
+                    <img src={rightLeaf} alt='rightLeaf' className='rightLeaf svg'></img>
+                    <img src={leftLeaf} alt='leftLeaf' className='leftLeaf svg'></img>
+                    <img src={background} alt='background' className='background svg'></img>
+                </div>
+                
             </div>
         </>
     )

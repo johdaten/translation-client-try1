@@ -69,12 +69,16 @@ export default function Dropzone({ name }) {
           <div className="title-container">
             <div className='icon'><BsCloudUpload size={80} style={{ fill: '#9e9e9e' }} /></div>
             <div className='icon-title'>
-              <Typography variant="h5" gutterBottom color="textSecondary" >
-                Seleccione los archivos
-              </Typography>
-              <Typography variant="h6" gutterBottom color="textSecondary">
-                O arrastre y suelte
-              </Typography>
+              <div className='top-dropzone-text'>
+                <Typography variant="h5" gutterBottom color="textSecondary" >
+                  Seleccione los archivos
+                </Typography>
+              </div>
+              <div className='bottom-dropzone-text'>
+                <Typography variant="h6" gutterBottom color="textSecondary">
+                  O arrastre y suelte
+                </Typography>
+              </div>
             </div>
           </div>
         </div>

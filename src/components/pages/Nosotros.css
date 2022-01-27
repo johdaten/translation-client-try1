@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url(//db.onlinewebfonts.com/c/54839774d9c05f05c05a06bc4800e4a9?family=ARS+Maquette+Pro);
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -23,17 +25,21 @@
     padding-right: 5%;
 }
 .nosotros-container .text .text-block .title{
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'ARS Maquette Pro', sans-serif;
     font-size: 2rem;
-    color: #1976d2;
+    color: rgb(0, 0, 0);
     margin-bottom: 15px;
+    text-align: left;
 }
 .nosotros-container .text .text-block .description{
-    font-size: 16px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight:0;
+    text-rendering: auto;
     line-height: 1.5em;
-    font-weight: 400;
     color: rgb(0, 0, 0);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'poppins', sans-serif;
 }
 
 .nosotros-container .animation{
@@ -101,5 +107,45 @@
     }
     to{
         transform: rotateZ(5deg);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    /* .nosotros-container{
+        margin-top: 80px;
+        width: 100vw;
+        height: auto;
+        display: grid;
+        grid-template-columns: 5% 90% 5%;
+        grid-template-rows: 100%;
+        align-content: space-evenly;
+        justify-items: center;
+    }
+    .nosotros-container .animation{
+        margin-top: 100%;
+        align-self: start;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2; 
+        position: relative;
+        width: 80%;
+        height: auto;
+    }
+    .nosotros-container .text{
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .nosotros-container .text .text-block{
+        text-align: center;
+        padding-left: 5%;
+    } */
+    .nosotros-container{
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 10vh;
+        line-height: 1.7rem;
+        /* border: red 2px solid; */
     }
 }

@@ -43,7 +43,8 @@
 
   .btn--large,
   .pedido{
-    background-image: linear-gradient(360deg, #eda642 50%, #edba42, #ffe68a);
+    background-color: #eda642;
+    /* background-image: linear-gradient(360deg, #eda642 50%, #edba42, #ffe68a); */
     color: white;
     transition: all 0.3s ease-out;
   }
@@ -62,4 +63,29 @@
     font-size: 28px;
     width: 100%;
     height: 45px;
+  }
+
+  @media screen and (max-width: 960px) {
+    .btns{
+      background-color: black;
+      color: black;
+    }
+    .btn--large{
+      padding: 0;
+
+
+    }
+    .btn--large,
+    .pedido{
+      border: transparent;
+      background-color: black;
+      color: white;
+      height: 100%;
+      width: 100%;
+      font-size: 1.4rem;
+      /* transition: all 0.3s ease-out; */
+    }
+
+
+  
   }

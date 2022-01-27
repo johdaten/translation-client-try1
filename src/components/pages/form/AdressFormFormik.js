@@ -25,8 +25,8 @@ export default function AdressFormFormik() {
                 <Field fullWidth name="email" type="email" component={TextField} label="Email *"/>
             </Grid>
             <Grid item xs={12} >
-                <Field fullWidth  name="message"  variant="outlined" component={TextField} label="Idioma a traducir seguido de un mensaje *" multiline
-          rows={4}/>
+                <Field fullWidth  name="message"  variant="outlined" component={TextField} label="Idioma a traducir *" multiline
+          rows={3}/>
             </Grid>
             </Grid>
         </React.Fragment>

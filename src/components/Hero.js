@@ -28,22 +28,22 @@ function Hero() {
           </h1> */}
         </div>
         <Earth className='earth-component'/>
-        <div className='pie-container'>
-          <img src={pie0} alt='pie0' className='pie0'></img>
+        <div className='pie-full-container'>
+          <div className='pie-container'>
+            <img src={pie0} alt='pie0' className='pie0'></img>
+          </div>
+          <div className='hero-message'>
+            <h3 className="message">
+              Contáctenos  
+              o cotice y te ayudaremos
+              <span className="whatsapp-info">
+                <IoLogoWhatsapp className="whatsapp-icon"/> 
+              <span className="whatsapp-link link"> 0992314818 </span>
+            </span>
+            </h3>
+          </div>
         </div>
-        <div className='hero-message'>
-          <h3 className="message">
-            Contáctenos  
-            o cotice y te ayudaremos
-            <span className="whatsapp-info">
-              <IoLogoWhatsapp className="whatsapp-icon"/> 
-            <span className="whatsapp-link link"> 0992314818 </span>
-          </span>
-          </h3>
-        </div>
-      </div>
-
-      <div className='hero-btns'>
+        <div className='hero-btns'>
           <Button
             className='btns pedido'
             buttonStyle='btn--outline'
@@ -52,6 +52,7 @@ function Hero() {
             >
             Cotiza Aquí
           </Button>
+        </div>
       </div>
       </>
     )

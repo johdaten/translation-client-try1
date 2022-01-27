@@ -3,7 +3,27 @@
   padding: 0;
   margin: 0;
 }
-
+@media screen and (max-width: 960px) {
+  .dropzone {
+    margin-top: 5px;
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 10px;
+    border: 4px dashed #9e9e9e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .title-container .icon {
+    margin-left: 1rem;
+  }
+  .title-container .icon-title .bottom-dropzone-text {
+    display: none;
+  }
+}
 .dropzone {
     margin-top: 5px;
     width: 100%;

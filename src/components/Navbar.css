@@ -7,7 +7,8 @@
   }
   
 .navbar {
-    background-color:#1976d2;;
+    /* background-color:#1976d2; */
+    background-color: #306ae6;
     height: 60px;
     width: 100%;
     display: flex;
@@ -25,7 +26,6 @@
     box-shadow: none;
   }
 
-
   .logo-title {
     font-family: 'Kodchasan', sans-serif;
     font-weight: 500;
@@ -38,11 +38,10 @@
     height: 80px;
     max-width: 1500px;
   }
-  
+
   .navbar-logo {
     color: #fff;
     justify-self: start;
-    margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -111,6 +110,9 @@
   .menu-icon {
     display: none;
   }
+  .nav-favicon{
+    display: none;
+  }
   
   @media screen and (max-width: 960px) {
 
@@ -118,26 +120,34 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 90vh;
-      position: absolute;
-      top: 80px;
-      left: -100%;
-      opacity: 1;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 100%;
       transition: all 0.5s ease;
     }
   
     .nav-menu.active {
-      background: #2d363f;
+      background: linear-gradient(to right, rgba(49,49,49,0.39) 0%, rgba(49,49,49,0.39) 35%, rgba(32,32,32,1) 35%, rgba(32,32,32,1) 100%);
+     
+      position: fixed;
       left: 0;
-      opacity: 1;
-      transition: all 0.5s ease;
+      top: 0;
       z-index: 1;
+      justify-content: start;
+      transition: all 0.5s ease;
     }
-  
+    
+    .react-icon-x {
+      position: sticky;
+      z-index: 3;
+    }
     .nav-links {
-      text-align: center;
-      padding: 2rem;
-      width: 100%;
+      text-align:left;
+      margin-left: 35%;
+      margin-top: 25%;
+      padding: 1.5rem;
+      width: 65%;
       display: table;
     }
   
@@ -150,19 +160,32 @@
   
     .navbar-logo {
       position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(25%, 7%);
+      top: 0.2rem;
+      left: 0.5rem;
     }
-  
+    .navbar-logo .logo-title {
+      margin-bottom: 0.2rem;
+    }
+    .navbar-logo .nav-favicon .img-favicon{
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.2rem;
+      margin-top: 0.5rem;
+      margin-left: 0.5rem;
+    }
+
     .menu-icon {
       display: block;
       position: absolute;
-      top: 0;
-      right: 0;
+      top: -1rem;
+      right: -0.5rem;
       transform: translate(-100%, 60%);
-      font-size: 1.8rem;
+      font-size: 2rem;
       cursor: pointer;
+      z-index: 2;
+    }
+    .menu-x{
+      position: fixed;
     }
   
     .fa-times {
@@ -190,8 +213,9 @@
       color: #242424;
       transition: 250ms;
     }
+
   }
 
   .react-icons {
-      color: white
+      color: white;
   }
