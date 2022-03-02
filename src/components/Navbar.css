@@ -115,7 +115,9 @@
   }
   
   @media screen and (max-width: 960px) {
-
+    .nav-favicon{
+      display: inline;
+    }
     .nav-menu {
       display: flex;
       flex-direction: column;
@@ -137,7 +139,16 @@
       justify-content: start;
       transition: all 0.5s ease;
     }
-    
+    .nav-item.before::before {
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 35vw;
+      height: 100%;
+      background-color: transparent;
+    }
     .react-icon-x {
       position: sticky;
       z-index: 3;
@@ -149,13 +160,6 @@
       padding: 1.5rem;
       width: 65%;
       display: table;
-    }
-  
-    .nav-links:hover {
-      background-color: #fff;
-      color: #2d363f;
-      border-radius: 0;
-      font-weight: 540;
     }
   
     .navbar-logo {
