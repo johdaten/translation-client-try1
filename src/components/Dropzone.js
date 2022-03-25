@@ -1,7 +1,8 @@
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useState, useEffect, useCallback, useRef} from 'react'
 import { useDropzone} from 'react-dropzone'
 import './Dropzone.css'
-import {BsCloudUpload} from 'react-icons/bs'
+import {BsCloudUpload} from 'react-icons/bs';
+import { RiFileUploadLine } from "react-icons/ri";
 import { SingleFileUploadProgress } from './drop/SingleFileUploadProgress';
 import { Grid, Typography } from '@material-ui/core'
 import { useField } from 'formik';
@@ -14,24 +15,25 @@ function getNewId() {
   return ++currentId + Date.now;
 }
 
-export default function Dropzone({ name }) {
+export default function Dropzone({ name, isDangerFile }) {
   const [field, meta, helpers] = useField(name)
 
   const [files, setFiles] = useState([])
   const onDrop = useCallback((accFiles, rejFiles) => {
     const mappedAcc = accFiles.map((file) => ({file, errors: [], id: getNewId()}))
     setFiles((curr) => [...curr, ...mappedAcc, ...rejFiles])
+
   }, [])
-  
+
   useEffect(() => {
     const ac = new AbortController();
     helpers.setValue(files,  {signal: ac.signal})
     return () => ac.abort()
   }, [files])
 
+  // Make sure to revoke the data uris to avoid memory leaks
   useEffect(
     () => {
-      // Make sure to revoke the data uris to avoid memory leaks
       files.forEach(file => URL.revokeObjectURL(file.preview));
     },
     [files]
@@ -63,20 +65,22 @@ export default function Dropzone({ name }) {
       <Grid item>
         <div
           {...getRootProps()}
-          className= {`dropzone ${isDragActive ? 'active' : null}`}
+          // shake-little
+          // ${isDragActive ? ' active' : ''}
+          className= {`dropzone ${isDangerFile ? 'upload-danger shake-little' : 'upload-success'} ${isDragActive ? ' active' : ''}`}
         >
           <input {...getInputProps()} ></input>
           <div className="title-container">
-            <div className='icon'><BsCloudUpload size={80} style={{ fill: '#9e9e9e' }} /></div>
+            <div className='icon'><RiFileUploadLine size={80} style={{ fill: '#9e9e9e' }} /></div>
             <div className='icon-title'>
               <div className='top-dropzone-text'>
                 <Typography variant="h5" gutterBottom color="textSecondary" >
-                  Seleccione los archivos
+                  Subir archivos
                 </Typography>
               </div>
               <div className='bottom-dropzone-text'>
                 <Typography variant="h6" gutterBottom color="textSecondary">
-                  O arrastre y suelte
+                  tocando Aquí
                 </Typography>
               </div>
             </div>
@@ -84,8 +88,7 @@ export default function Dropzone({ name }) {
         </div>
       </Grid>
 
-      {/* {JSON.stringify(files)}  */}
-
+      {/* {JSON.stringify(files)} */}
           {files.map((fileWrapper, index) => {
               return (
                 <Grid item key={fileWrapper.id}>

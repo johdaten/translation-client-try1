@@ -34,14 +34,36 @@ function Hero() {
           </div>
           <div className='hero-message'>
             <h3 className="message">
-              Contáctenos  
-              o cotice y te ayudaremos
+              <span className='message-info'>
+              Contáctenos al whatsapp
+              o cotice dando click
+              </span>
               <span className="whatsapp-info">
-                <IoLogoWhatsapp className="whatsapp-icon"/> 
-              <span className="whatsapp-link link"> 0992314818 </span>
+                {/* WhatsApp icon */}
+                  <a
+                    href="https://wa.me/5930992314818"
+                    class="whatsapp_float"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa fa-whatsapp whatsapp-icon fa-4x"></i>
+                  </a>
+
+                {/* <IoLogoWhatsapp className="whatsapp-icon"/>  */}
+              {/* <span className="whatsapp-link link"> 0992314818 </span> */}
             </span>
             </h3>
           </div>
+        </div>
+        <div className='whatsapp-cell'>
+          <a
+            href="https://wa.me/5930992314818"
+            class="whatsapp_float "
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-whatsapp whatsapp-icon fa-3x"></i>
+          </a>
         </div>
         <div className='hero-btns'>
           <Button
@@ -53,6 +75,7 @@ function Hero() {
             Cotiza Aquí
           </Button>
         </div>
+      
       </div>
       </>
     )

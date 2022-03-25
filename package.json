@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+    "csshake": "^1.5.3",
     "dropzone": "^5.9.2",
     "eslint-plugin-import": "^2.25.3",
     "extract-word-docs": "^1.1.3",

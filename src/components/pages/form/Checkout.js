@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
@@ -67,9 +67,14 @@ const stepsLabels = ['Ordene ahora'];
 const sleep = (time) => new Promise((acc) => setTimeout(acc, time));
 
 export default function Checkout() {
+  const valueRef = useRef()
+  const [isDangerFile, setIsDangerFile] = useState(false)
   
   return (
         <FormikStepper
+          valueRef={valueRef}
+          isDangerFile={isDangerFile}
+          setIsDangerFile={setIsDangerFile}
           initialValues={{
             files: [],
             name: '',
@@ -84,13 +89,15 @@ export default function Checkout() {
         >
           <FormikStep
             validationSchema={object().shape({
-              files: array(),
+              files: array().min(1),
               name: string().required('Ingrese su nombre'),
               lastName: string().required('Ingrese su apellido'),
               email: string().email().required('Ingrese una dirección de email'),
           })}
           >
-            <AdressFormFormik />
+            <AdressFormFormik 
+              isDangerFile={isDangerFile}
+            />
           </FormikStep>
         </FormikStepper>
         
@@ -101,7 +108,9 @@ export function FormikStep({ children }) {
   return <>{children}</>
 }
 
-export function FormikStepper({children, ...props}) {
+export function FormikStepper({children, isDangerFile, setIsDangerFile, valueRef, ...props}) {
+
+
   const [serverState, setServerState] = useState()
   const handleServerResponse = (ok, msg) => setServerState({ok, msg})
   const handleOnSubmit = (values, actions) => {
@@ -120,6 +129,7 @@ export function FormikStepper({children, ...props}) {
         console.log(error)
       });
     }
+
 
 
   const classes = useStyles();
@@ -152,9 +162,10 @@ export function FormikStepper({children, ...props}) {
               ) : (
                 <React.Fragment>
                     <Formik { ...props} 
+                      innerRef={valueRef} //Gets the value of formik
                       validationSchema={currentChild.props.validationSchema}
                       onSubmit={async (values, helpers) => {
-                        if(isLastStep()) {
+                        if(isLastStep() ) {
                           await props.onSubmit(values, helpers)
                           setCompleted(true)
                           handleOnSubmit(values)
@@ -193,6 +204,22 @@ export function FormikStepper({children, ...props}) {
                             color="primary" 
                             variant="contained"
                             type="submit"
+                            // onClick={() => {
+                            //   valueRef.current.values.files.length < 1 ? setIsDangerFile(true) : setIsDangerFile(false)
+                            //   console.log(valueRef.current.values.files)
+                            //   console.log(valueRef)
+                            //   console.log(isDangerFile)
+                            // }}
+
+                            onClick={async()=>{
+                              valueRef.current.values.files.length < 1 ? setIsDangerFile(true) : setIsDangerFile(false);
+                              if(isDangerFile===true) {
+                                valueRef.current.focus()
+                              }
+                              await setTimeout(()=>{
+                                setIsDangerFile(false)
+                              }, 3000)
+                            }}
                           >
                             {isSubmitting ? 'Enviando' : isLastStep() ? "Enviar" : "Siguiente" }
             

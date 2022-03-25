@@ -190,19 +190,32 @@ z-index: 1000;
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
 }
-
-.hero .hero-message .whatsapp-icon{
-  color: #52ce5f;
+.message .message-info{
+  margin-left: 7rem;
 }
-.hero .hero-message .whatsapp-link{
+.whatsapp_float{
+  width: 50px;
+  height: 100px;
+}
+.whatsapp-icon{
+  position: absolute;
+  left: 0;
+  top: -1.5rem;
+  color: #52ce5f;
+  background-color: #e9e9e9;
+  border-radius: 5px;
+}
+/* .hero .hero-message .whatsapp-link{
   color: black;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+} */
+.whatsapp_float{
+  width: 50px;
+  height: 50px;
 }
-
 .hero .hero-message .whatsapp-info{
   margin-left: 10px;
-
 }
 
 @media screen and (max-width: 960px) {
@@ -313,20 +326,28 @@ z-index: 1000;
     z-index: 1000;
     }
     .pie0{
-      display: none;
-      width: 85%;
+      /* display: none; */
+      visibility: hidden;
     }
-    .hero-message{
+    .hero-message .message-info{
       display: none;
     }
     .hero-btns{
-      margin-left: 0;
-      padding-left: 0 ;
       height: 3.5rem;
       width: 80vw;
-      /* border: red solid 2px; */
       position: absolute;
       left: 10%;
+      bottom: 3%
+    }
+    .whatsapp-info{
+      visibility: hidden;
+    }
+    .whatsapp-cell{
+      width: 20vw;
+      position: absolute;
+      left: 10%;
+      bottom: 17%;
+      z-index: 100000;
     }
     
 }
