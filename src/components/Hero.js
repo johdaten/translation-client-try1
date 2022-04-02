@@ -1,5 +1,6 @@
 import React from 'react'
 import './Hero.css';
+import Whatsapp from './Whatsapp'
 // import Earth from './Earth';
 import {Button} from './Button';
 import slide1 from '../icons/slide1.svg'
@@ -28,6 +29,16 @@ function Hero() {
           </h1> */}
         </div>
         <Earth className='earth-component'/>
+        <div className='whatsapp-component'>
+          <a
+            href="https://wa.me/5930992314818"
+            class="whatsapp_float"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Whatsapp />
+          </a>
+        </div>
         <div className='pie-full-container'>
           <div className='pie-container'>
             <img src={pie0} alt='pie0' className='pie0'></img>
@@ -38,32 +49,8 @@ function Hero() {
               Contáctenos al whatsapp
               o cotice dando click
               </span>
-              <span className="whatsapp-info">
-                {/* WhatsApp icon */}
-                  <a
-                    href="https://wa.me/5930992314818"
-                    class="whatsapp_float"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fa fa-whatsapp whatsapp-icon fa-4x"></i>
-                  </a>
-
-                {/* <IoLogoWhatsapp className="whatsapp-icon"/>  */}
-              {/* <span className="whatsapp-link link"> 0992314818 </span> */}
-            </span>
             </h3>
           </div>
-        </div>
-        <div className='whatsapp-cell'>
-          <a
-            href="https://wa.me/5930992314818"
-            class="whatsapp_float "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa fa-whatsapp whatsapp-icon fa-3x"></i>
-          </a>
         </div>
         <div className='hero-btns'>
           <Button
