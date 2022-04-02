@@ -1,5 +1,6 @@
 :root {
     --primary: #fff;
+    --secondary: black;
   }
   
   .btn {
@@ -16,10 +17,12 @@
   }
   
   .btn--outline {
-    background-color: transparent;
-    color: #fff;
-    padding: 8px 20px;
-    border: 1px solid var(--primary);
+    background-color: red;
+    color: var(--primary);
+    /* padding: 8px 20px; */
+    border: 1px solid red;
+    box-shadow: 2px 2px 15px 2px rgb(0 0 0 / 25%);
+    border-radius: 4px;
     transition: all 0.3s ease-out;
   }
   
@@ -31,28 +34,6 @@
   .btn--large {
     padding: 12px 26px;
     font-size: 20px;
-  }
-  
-  .btn--large:hover,
-  .btn--medium:hover {
-    transition: all 0.3s ease-out;
-    background: #fff;
-    color: #242424;
-    transition: 250ms;
-  }
-
-  .btn--large,
-  .pedido{
-    background-color: #eda642;
-    /* background-image: linear-gradient(360deg, #eda642 50%, #edba42, #ffe68a); */
-    color: white;
-    transition: all 0.3s ease-out;
-  }
-  .btn--large:hover,
-  .pedido:hover{
-    transition: all 0.3s ease-out;
-    background-image: linear-gradient(360deg, #eda642 80%, #edba42, #ffe68a);
-    color: #242424;
   }
 
   .btn--pedidos{
@@ -67,8 +48,8 @@
 
   @media screen and (max-width: 960px) {
     .btns{
-      background-color: black;
-      color: black;
+      background-color: red;
+      color: white;
     }
     .btn--large{
       padding: 0;
@@ -78,11 +59,17 @@
     .btn--large,
     .pedido{
       border: transparent;
-      background-color: black;
+      background-color: red;
       color: white;
       height: 100%;
       width: 100%;
-      font-size: 1.4rem;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      border-radius: 4px;
+      /* box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 25%); */
+      box-shadow: 20px 23px 59px -11px rgba(0,0,0,0.85);
+      -webkit-box-shadow: 20px 23px 59px -11px rgba(0,0,0,0.85);
+      -moz-box-shadow: 20px 23px 59px -11px rgba(0,0,0,0.85);
       /* transition: all 0.3s ease-out; */
     }
 
