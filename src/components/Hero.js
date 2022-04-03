@@ -46,8 +46,7 @@ function Hero() {
           <div className='hero-message'>
             <h3 className="message">
               <span className='message-info'>
-              Contáctenos al whatsapp
-              o cotice dando click
+              Contáctenos por WhatsApp o Cotice con nosotros
               </span>
             </h3>
           </div>
