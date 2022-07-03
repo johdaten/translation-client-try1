@@ -24,11 +24,11 @@ export default function AdressFormFormik({ isDangerFile }) {
                 <Field fullWidth name="lastName" component={TextField} label="Apellido *"/>
             </Grid>
             <Grid item xs={12}>
-                <Field fullWidth name="email" type="email" component={TextField} label="Email *"/>
+                <Field fullWidth name="email" type="email" component={TextField} label="Email/Correo *"/>
             </Grid>
             <Grid item xs={12} >
                 <Field fullWidth  name="message"  variant="outlined" component={TextField} label="Idioma a traducir *" multiline
-          rows={3}/>
+          rows={1}/>
             </Grid>
             </Grid>
         </React.Fragment>

@@ -1,0 +1,43 @@
+.book-container{
+    font-family: 'Source Code Pro', monospace;
+    border: 1px solid rgb(0, 0, 0);
+    height: 350px;
+}
+.book-container .book-image{
+    position: relative;
+    width: 300px;
+    height: inherit;
+}
+.book-yellow {
+    position: relative;
+}
+.book-yellow::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 110%;
+    height: inherit;
+    left: 245px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #f6f9fc;
+    z-index: 1000;
+}
+.book-blue{
+    position: absolute;
+    left: 100%;
+    top: 0;
+    animation: slide 3s cubic-bezier(.71,.1,.92,.22) 2s forwards;
+}
+.book-red{
+    position: absolute;
+    left: 100%;
+    top: 0;
+    animation: slide 3s cubic-bezier(.71,.1,.92,.22) 4s forwards;
+}
+@keyframes slide {
+    to {
+        left: 0%;
+    }
+}

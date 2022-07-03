@@ -10,6 +10,9 @@ import { Form, Formik } from 'formik';
 import { CircularProgress } from '@material-ui/core'
 import { object, string, array } from 'yup';
 import axios from "axios";
+import { GiTransparentSlime } from 'react-icons/gi';
+import './Checkout.css';
+// import {Button} from '../../Button';
 
 function Copyright() {
   return (
@@ -32,20 +35,23 @@ const useStyles = makeStyles((theme) => ({
     width: 'auto',
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
-      width: 600,
+    [theme.breakpoints.up(400 + theme.spacing(2) * 2)]: {
+      // WIDTH OF THE FORM
+      width: 465,
       marginLeft: 'auto',
       marginRight: 'auto',
     },
   },
   paper: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(3),
+    marginTop: theme.spacing(0),
+    marginBottom: theme.spacing(0),
     padding: theme.spacing(2),
+    backgroundColor: "hsla(360, 100%, 100%, 0.35)",
+    //backgroundColor: "#f7f7e7",
     [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginTop: theme.spacing(6),
-      marginBottom: theme.spacing(6),
-      padding: theme.spacing(3),
+      // marginTop: theme.spacing(6),
+      // marginBottom: theme.spacing(6),
+      padding: theme.spacing(4),
     },
   },
   stepper: {
@@ -58,6 +64,17 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
+    backgroundColor: "#24293e",
+    color: "#ffffff",
+    fontFamily: 'Arial',
+    fontSize: "1rem",
+    borderRadius: "25px",
+    width: "9.3rem",
+    height: "2rem",
+    textTransform: "none",
+    '&:hover': {
+      backgroundColor: '#3b415a',
+  },
   },
 }));
 
@@ -201,8 +218,8 @@ export function FormikStepper({children, isDangerFile, setIsDangerFile, valueRef
                           <Button startIcon={isSubmitting ? <CircularProgress size="1rem"/> : null} 
                             disabled={isSubmitting} 
                             className={classes.button} 
-                            color="primary" 
-                            variant="contained"
+                            // color="primary" 
+                            // variant="contained"
                             type="submit"
                             // onClick={() => {
                             //   valueRef.current.values.files.length < 1 ? setIsDangerFile(true) : setIsDangerFile(false)
@@ -214,7 +231,7 @@ export function FormikStepper({children, isDangerFile, setIsDangerFile, valueRef
                             onClick={async()=>{
                               valueRef.current.values.files.length < 1 ? setIsDangerFile(true) : setIsDangerFile(false);
                               if(isDangerFile===true) {
-                                valueRef.current.focus()
+                                // valueRef.current.focus()
                               }
                               await setTimeout(()=>{
                                 setIsDangerFile(false)
@@ -233,7 +250,7 @@ export function FormikStepper({children, isDangerFile, setIsDangerFile, valueRef
             )}
           </React.Fragment>
           </Paper>
-          <Copyright />
+          {/* <Copyright /> */}
         </main>
       </React.Fragment>  
   )

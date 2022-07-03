@@ -34,9 +34,8 @@
 .dropzone {
     margin-top: 5px;
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     margin-bottom: 10px;
-    /* border: 4px dashed #9e9e9e; */
     display: flex;
     justify-content: center;
     align-items: center;

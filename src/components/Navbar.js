@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from "react-router-dom"
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { BsXSquareFill } from 'react-icons/bs'
 import { BsX } from 'react-icons/bs'
 import './Navbar.css'
 import { useLocation } from "react-router-dom"
@@ -32,35 +31,34 @@ function Navbar() {
     return (
         <>
             <nav 
-                className={`navbar ${(document.URL.charAt(document.URL.length - 1) === '/') ? 'transparent' : null}`}
+                className={`navbar-container ${(document.URL.charAt(document.URL.length - 1) === '/') ? 'transparent' : null}`}
             >
-                <div className='navbar-container'>
                     <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                            <span className="nav-favicon">
+                            {/* <span className="nav-favicon">
                                 <img src="favicon-nav.png" alt="favicon" className="img-favicon"></img>
-                            </span>
-                            <span className='logo-title'>DUALECTO</span>
+                            </span> */}
+                            <span className='logo-title ff-bodoni-mt ff-ibm-plex-sans fs-600 fw-600 letter-spacing-4'>Dualecto</span>
                     </Link>
                     <div className={`menu-icon ${click ? 'menu-x' : null}`} onClick={handleClick}>
                         <i className='react-icons'>{click ? <BsX/> : <GiHamburgerMenu/>}</i>
                     </div>
             
-                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                    <ul className={click ? 'nav-menu active' : 'nav-menu ff-century-gothic '}>
                         <li className='nav-item before' onClick={closeMobileMenu}>
                         </li>
-                        <li className='nav-item'>
+                        <li className='nav-item letter-spacing-2'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                             Inicio
                             </Link>
                         </li>
-                        <li className='nav-item'>
+                        <li className='nav-item letter-spacing-2'>
                             <Link to='/nosotros' className='nav-links' onClick={closeMobileMenu}>
                             Nosotros
                             </Link>
                         </li>
-                        <li className='nav-item'>
-                            <Link to='/contactos' className='nav-links' onClick={closeMobileMenu}>
-                            Contactos
+                        <li className='nav-item letter-spacing-2'>
+                            <Link to='/traducciones' className='nav-links' onClick={closeMobileMenu}>
+                            Traducciones
                             </Link>
                         </li>
                         {/* <li>
@@ -76,7 +74,6 @@ function Navbar() {
 
                     
                     {/* {button && <Button linkTo='/sign-up' buttonStyle='btn--outline'>Registrarse</Button>} */}
-                </div>
             </nav>
         </>
     )

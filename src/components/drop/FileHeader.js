@@ -1,6 +1,6 @@
 import React from 'react'
-import { Grid, Button} from '@material-ui/core'
-import DeleteIcon from '@material-ui/icons/Delete';
+import { Grid, Button} from '@material-ui/core';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export function FileHeader({ file, onDelete }) {
     return (

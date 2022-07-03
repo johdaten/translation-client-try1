@@ -1,343 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .hero {
-  width: 100vw;
-  height: 100vh;
-  margin: auto;
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.hero .slides-container {
   display: flex;
-  text-align: center;
-  width: 100%;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 100vw;
+  min-height: 100vh;
   position: relative;
-  z-index: 999;
 }
-.hero .slides-container .images {
-  width: 100%;
-}
-
-/* AQUÍ EMPIEZA EL CENTRO */
-.hero .slides-container span{
-  font-family: 'Poppins', sans-serif;
-  font-size: 80px;
-  font-weight: 400;
-  color: #fff;
-}
-.hero .slides-container .lang{
+/* HERO HEADER               */
+.hero-header-title{
+  width: 570px;
+  height: auto;
   position: absolute;
-  font-stretch: condensed;
-  font-weight: 900px;
-  font-size: 250px;
-  font-family: 'Dela Gothic One', cursive;
-  margin-top:7px;
+  top: 180px;
+  left: 100px;
+  color: #1e1e20;
+  z-index: 1000;
 }
-.whatsapp-component{
-  position: absolute;
-  top: 65%;
-  left: 70%;
-  z-index: 1001;
+.hero-header-title .hero-header-subtitle{
+  margin-top: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: hsl(240, 3%, 12%, 1);
+  line-height: 2rem;
+}
+.hero-header-title .hero-header-info{
+  margin-top: 1rem;
+  letter-spacing: 0.4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  width: max-content;
+}
+.hero-header-title .whatsapp-component a{
+  color: #2997ff;
+}
+.hero-header-title .whatsapp-component a:hover{
+  text-decoration: underline;
+}
+.hero-header-info .whatsapp-component a{
+  display: flex;
+  align-items: baseline;
 }
 .whatsapp-component a{
   text-decoration: none;
 }
 
-@keyframes animate-slide{
-
-  0%{transform: translateX(0);}
-  7.5555%{transform: translateX(0);}
-  26.3055%{transform: translateX(-100vw);}
-  52.7777%{transform: translateX(-100vw);}
-  69.4444%{transform: translateX(-200vw);}
-  75.0000%{transform: translateX(-200vw);}
-  85.4166%{transform: translateX(-100vw);}
-  86.1111%{transform: translateX(-100vw);}
-  100%{transform: translateX(0);}
-}
-.slide1{
-  position: relative;
-  z-index: 100;
-  animation-name: animate-slide;
-  animation-duration: 6000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.slide2{
-  position: relative;
-  z-index: 200;
-  animation-name: animate-slide;
-  animation-duration: 6000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.slide3{
-  position: relative;
-  z-index:300;
-
-    animation-name: animate-slide;
-    animation-duration: 6000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-.es{
-  color: #81cada;
-  margin-left: auto;
-  margin-right: auto;
-  left: -6%;
-  right: 0;
-  text-align: center;
-  z-index: 110;
-  animation-name: animate-es;
-  animation-duration: 6000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-@keyframes animate-es {
-  0%{transform: scale(0.7, 0.6)}
-  7.5555%{transform: translateX(0) scale(0.7, 0.6);}
-  26.3055%{transform: translateX(100vw) scale(0.7, 0.6);}
-  52.7777%{transform: translateX(100vw) scale(0.7, 0.6);}
-  69.4444%{transform: translateX(50vw) scale(0.7, 0.6);}
-  75.0000%{transform: translateX(50vw) scale(0.7, 0.6);}
-  85.4166%{transform: translateX(100vw) scale(0.7, 0.6);}
-  86.1111%{transform: translateX(100vw) scale(0.7, 0.6);}
-  100%{transform: scale(0.7, 0.6);}
-}
-.en{
-  color: #ffb794;
-  margin-left: auto;
-  margin-right: auto;
-  left: 112%;
-  right: 0;
-  text-align: center;
-  z-index: 210;
-  animation-name: animate-en;
-  animation-duration: 6000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-@keyframes animate-en {
-  0%{transform: scale(0.7, 0.6)}
-  7.5555%{transform: translateX(0) scale(0.7, 0.6);}
-  26.3055%{transform: translateX(-100vw) scale(0.7, 0.6);}
-  52.7777%{transform: translateX(-100vw) scale(0.7, 0.6);}
-  69.4444%{transform: translateX(50vw) scale(0.7, 0.6);}
-  75.0000%{transform: translateX(50vw) scale(0.7, 0.6);}
-  85.4166%{transform: translateX(-100vw) scale(0.7, 0.6);}
-  86.1111%{transform: translateX(-100vw) scale(0.7, 0.6);}
-  100%{transform: scale(0.7, 0.6);}
-}
-.de{
-  color: #4a58db;
-  left: 204%;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  z-index: 310;
-
-  animation-name: animate-de;
-  animation-duration: 6000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-@keyframes animate-de{
-  0%{transform: translateX(0) scale(0.7, 0.6);}
-  7.5555%{transform: translateX(0) scale(0.7, 0.6);}
-  26.3055%{transform: translateX(-100vw) scale(0.7, 0.6);}
-  52.7777%{transform: translateX(-100vw) scale(0.7, 0.6);}
-  69.4444%{transform: translateX(-200vw) scale(0.7, 0.6);}
-  75.0000%{transform: translateX(-200vw) scale(0.7, 0.6);}
-  85.4166%{transform: translateX(-100vw) scale(0.7, 0.6);}
-  86.1111%{transform: translateX(-100vw) scale(0.7, 0.6);}
-  100%{transform: translateX(0) scale(0.7, 0.6);}
-}
-
-/* PIE-BASE-BUTTOM */
-.pie-container{
-display: flex;
-width: 100%;
-height: 80%;
-justify-content: center;
-align-items: center;
-position: absolute;
-left: 0;
-top:62%;
-z-index: 1000;
-}
-.pie0{
-  width: 85%;
-}
-
-/* BUTTON */
-.hero-btns{
-  margin-top: 32px;
+/* GRADIENT                  */
+.hero-header-container .gradient{
+  transform: skew(0, -12deg);
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  right: 15%;
-  bottom: 4%;
-  z-index: 1002;
-  width: 200px;
+  top: -42%;
+  left: 0;
 }
 
-/* MENSAJE */
-
-.hero .hero-message .message{
+/* CHECKOUT                  */
+.checkout-container{
   position: absolute;
-  left: 5%;
-  bottom: 3%;
-  z-index: 1002;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-.message .message-info{
-  margin-left: 7rem;
-}
-
-/* .hero .hero-message .whatsapp-link{
-  color: black;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-} */
-
-@media screen and (max-width: 960px) {
-  .hero {
-    height: 100vh;
-    width: auto;
-    margin: auto;
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  .hero .slides-container {
-    display: flex;
-    text-align: center;
-    height: 100%;
-    position: relative;
-    z-index: 999;
-  }
-  .hero .slides-container .images {
-    width: 100%;
-  }
-
-  .es{
-    color: #81cada;
-    margin-left: auto;
-    margin-right: auto;
-    left: -50%;
-    right: 0;
-    text-align: center;
-    z-index: 110;
-    animation-name: animate-es;
-    animation-duration: 6000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-  @keyframes animate-es {
-    0%{transform: scale(0.2, 0.4)}
-    7.5555%{transform: translateX(0) scale(0.2, 0.4);}
-    26.3055%{transform: translateX(100vw) scale(0.2, 0.4);}
-    52.7777%{transform: translateX(100vw) scale(0.2, 0.4);}
-    69.4444%{transform: translateX(50vw) scale(0.2, 0.4);}
-    75.0000%{transform: translateX(50vw) scale(0.2, 0.4);}
-    85.4166%{transform: translateX(100vw) scale(0.2, 0.4);}
-    86.1111%{transform: translateX(100vw) scale(0.2, 0.4);}
-    100%{transform: scale(0.2, 0.4);}
-  }
-  .en{
-    color: #ffb794;
-    margin-left: auto;
-    margin-right: auto;
-    left: 111%;
-    right: 0;
-    text-align: center;
-    z-index: 210;
-    animation-name: animate-en;
-    animation-duration: 6000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-  @keyframes animate-en {
-    0%{transform: scale(0.2, 0.4)}
-    7.5555%{transform: translateX(0) scale(0.2, 0.4);}
-    26.3055%{transform: translateX(-100vw) scale(0.2, 0.4);}
-    52.7777%{transform: translateX(-100vw) scale(0.2, 0.4);}
-    69.4444%{transform: translateX(50vw) scale(0.2, 0.4);}
-    75.0000%{transform: translateX(50vw) scale(0.2, 0.4);}
-    85.4166%{transform: translateX(-100vw) scale(0.2, 0.4);}
-    86.1111%{transform: translateX(-100vw) scale(0.2, 0.4);}
-    100%{transform: scale(0.2, 0.4);}
-  }
-  .de{
-    color: #4a58db;
-    left: 201%;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    z-index: 310;
-
-    animation-name: animate-de;
-    animation-duration: 6000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-  @keyframes animate-de{
-    0%{transform: translateX(0) scale(0.2, 0.4);}
-    7.5555%{transform: translateX(0) scale(0.2, 0.4);}
-    26.3055%{transform: translateX(-100vw) scale(0.2, 0.4);}
-    52.7777%{transform: translateX(-100vw) scale(0.2, 0.4);}
-    69.4444%{transform: translateX(-200vw) scale(0.2, 0.4);}
-    75.0000%{transform: translateX(-200vw) scale(0.2, 0.4);}
-    85.4166%{transform: translateX(-100vw) scale(0.2, 0.4);}
-    86.1111%{transform: translateX(-100vw) scale(0.2, 0.4);}
-    100%{transform: translateX(0) scale(0.2, 0.4);}
-  }
-
-  /* PIE-BASE-BUTTOM */
-    .pie-container{
-    display: flex;
-    width: 100%;
-    height: 10rem;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 0;
-    top:85%;
-    z-index: 1000;
-    }
-    .pie0{
-      /* display: none; */
-      visibility: hidden;
-    }
-    .hero-message .message-info{
-      display: none;
-    }
-    .hero-btns{
-      height: 3.5rem;
-      width: 80vw;
-      position: absolute;
-      left: 10%;
-      bottom: 3%
-    }
-    .whatsapp-component{
-      position: absolute;
-      top: 70%;
-      left: 10vw;
-      z-index: 1002;
-    }
-    
+  top: 80px;
+  right: 5px;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 1px 0 hsl(0deg 0% 100% / 10%), 0 50px 100px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%);
+  z-index: 1000;
 }

@@ -1,0 +1,88 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------- */
+/* CUSTOM VALUES             */
+/* ------------------------- */
+:root {
+    --animation-time: 4s; 
+  }
+
+/* ------------------------- */
+/* PROGRAM                   */
+/* ------------------------- */
+.gradient-container{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.gradient-container div{
+    position: absolute;
+    border-radius: 50%;
+    animation: gradient var(--animation-time) cubic-bezier(.35,.69,.73,-0.06) alternate infinite;
+    animation: rotation 10s infinite alternate linear;
+}
+@keyframes gradient{
+    70%{
+        transform: scale(1.7) translate(50px);
+    }
+}
+@keyframes rotation{
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to {
+        transform: rotate(359deg) scale(2);
+    }
+}
+.gradient-container div:nth-child(1){
+    height: 90%;
+    width: 80%;
+    background-color: #55cfee;
+    left: -12%;
+    top: -5%;
+    /* transform-origin: bottom right; */
+}
+.gradient-container div:nth-child(2){
+    height: 80%;
+    width: 70%;
+    background-color: #7a3dc9;
+    top: 20%;
+    right: -12%;
+    animation-delay: 2s;
+    /* transform-origin: bottom left; */
+}
+.gradient-container div:nth-child(3){
+    height: 65%;
+    width: 80%;
+    background-color: #e63434;
+    bottom: -30%;
+    right: -20%;
+    animation-delay: 0.3s;
+    /* transform-origin: top left; */
+}
+.gradient-container div:nth-child(4){
+    height: 50%;
+    width: 75%;
+    background-color: #f09953;
+    bottom: -15%;
+    left: -18%;
+    animation-delay: 1.2s;
+    /* transform-origin: top right; */
+}
+.gradient-container:after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(70px);
+}

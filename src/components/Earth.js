@@ -4,9 +4,7 @@ import './Hero.css'
 
 function Earth() {
     return (
-        <div className='planet'>
-            <div className='earth'></div>
-        </div>
+        <div className='earth'></div>
     )
 }
 

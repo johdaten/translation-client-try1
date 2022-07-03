@@ -1,0 +1,29 @@
+.pen-animation-container{
+    position: relative;
+}
+
+.pen-animation-container >*{
+    width: 3rem;
+    height: 3rem;
+}
+
+.pen-animation-container .pen-one-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.pen-animation-container .pen-two-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    animation: pen-two 1s ease-in-out 1s alternate infinite;
+}
+@keyframes pen-two{
+    to {
+        left: 5%;
+        opacity: 75%;
+    }
+    
+}
